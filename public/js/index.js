@@ -1533,7 +1533,7 @@ const data = {
 
 let body = "";
 for (let i in data) {
-  let src = "../flagssvg/" + data[i].twoLetterCode + ".svg";
+  let src = "../flagssvg/" + data[i].twoLetterCode.toLowerCase() + ".svg";
   let alt = data[i].name[0] + " Flag";
   let img = `<img src=${src} alt=${alt}  width="100%" height="100%"/>`;
   let element = `<div class="col d-flex align-items-stretch">
