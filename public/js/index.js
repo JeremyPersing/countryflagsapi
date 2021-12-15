@@ -1654,6 +1654,7 @@ function populateModalOne(code) {
 }
 
 function populateModalTwo(code, type) {
+  console.log("in populate modal two and the code is", code);
   if (!code) return;
 
   let obj = data[code.toLowerCase()];
