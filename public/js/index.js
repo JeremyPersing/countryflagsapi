@@ -1543,9 +1543,9 @@ for (let i in data) {
           <h5 class="card-text">
             ${data[i].name[0]}
           </h5>
-          <p><b>Two Letter Code:</b> ${data[i]?.twoLetterCode}</p>
-          <p><b>Three Letter Code:</b> ${data[i]?.threeLetterCode}</p>
-          <p><b>Number:</b> ${data[i]?.number}</p>
+          <p><b>ISO Alpha-2:</b> ${data[i]?.twoLetterCode}</p>
+          <p><b>ISO Alpha-3:</b> ${data[i]?.threeLetterCode}</p>
+          <p><b>UN Code:</b> ${data[i]?.number}</p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
               <button
@@ -1586,6 +1586,7 @@ for (let i in data) {
 document.getElementById("flags").innerHTML = body;
 
 function populateModalOne(code) {
+  console.log("in populateModalOne");
   if (!code) return;
 
   let obj = data[code.toLowerCase()];
