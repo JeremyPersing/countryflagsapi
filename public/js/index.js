@@ -1533,7 +1533,7 @@ const data = {
 
 let body = "";
 for (let i in data) {
-  let src = "https://www.countryflagsapi.com/svg/" + data[i].twoLetterCode;
+  let src = "../flagssvg/" + data[i].twoLetterCode + ".svg";
   let alt = data[i].name[0] + " Flag";
   let img = `<img src=${src} alt=${alt}  width="100%" height="100%"/>`;
   let element = `<div class="col d-flex align-items-stretch">
@@ -1602,10 +1602,10 @@ function populateModalOne(code) {
     nameSvgs = "";
   if (namesArr) {
     for (let i in namesArr) {
-      namePngs += `<p>https://www.countryflagsapi.com/png/${namesArr[
+      namePngs += `<p>https://countryflagsapi.com/png/${namesArr[
         i
       ].toLowerCase()}</p>`;
-      nameSvgs += `<p>https://www.countryflagsapi.com/svg/${namesArr[
+      nameSvgs += `<p>https://countryflagsapi.com/svg/${namesArr[
         i
       ].toLowerCase()}</p>`;
     }
@@ -1614,22 +1614,22 @@ function populateModalOne(code) {
   let twoCodePng = "",
     twoCodeSvg = "";
   if (twoLetterCode) {
-    twoCodePng = `<p>https://www.countryflagsapi.com/png/${twoLetterCode.toLowerCase()}</p>`;
-    twoCodeSvg = `<p>https://www.countryflagsapi.com/svg/${twoLetterCode.toLowerCase()}</p>`;
+    twoCodePng = `<p>https://countryflagsapi.com/png/${twoLetterCode.toLowerCase()}</p>`;
+    twoCodeSvg = `<p>https://countryflagsapi.com/svg/${twoLetterCode.toLowerCase()}</p>`;
   }
 
   let threeCodePng = "",
     threeCodeSvg = "";
   if (threeLetterCode) {
-    threeCodePng = `<p>https://www.countryflagsapi.com/png/${threeLetterCode.toLowerCase()}</p>`;
-    threeCodeSvg = `<p>https://www.countryflagsapi.com/svg/${threeLetterCode.toLowerCase()}</p>`;
+    threeCodePng = `<p>https://countryflagsapi.com/png/${threeLetterCode.toLowerCase()}</p>`;
+    threeCodeSvg = `<p>https://countryflagsapi.com/svg/${threeLetterCode.toLowerCase()}</p>`;
   }
 
   let numPng = "",
     numSvg = "";
   if (number) {
-    numPng = `<p>https://www.countryflagsapi.com/png/${number.toLowerCase()}</p>`;
-    numSvg = `<p>https://www.countryflagsapi.com/svg/${number.toLowerCase()}</p>`;
+    numPng = `<p>https://countryflagsapi.com/png/${number.toLowerCase()}</p>`;
+    numSvg = `<p>https://countryflagsapi.com/svg/${number.toLowerCase()}</p>`;
   }
 
   let modalBody = `<div>
@@ -1664,7 +1664,7 @@ function populateModalTwo(code, type) {
   document.getElementById("modalTwoLabel").innerText =
     obj?.name[0] + " " + fileType;
 
-  let img = `<img src="https://www.countryflagsapi.com/${type}/${code.toLowerCase()}" alt="${
+  let img = `<img src="https://countryflagsapi.com/${type}/${code.toLowerCase()}" alt="${
     obj?.name[0]
   } flag"/>`;
 
