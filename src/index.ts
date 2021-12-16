@@ -19,7 +19,6 @@ function main() {
           directives: {
             ...helmet.contentSecurityPolicy.getDefaultDirectives(),
             "script-src": ["'self'", "cdn.jsdelivr.net"],
-            "script-src-attr": ["'unsafe-inline'"],
           },
         },
       })

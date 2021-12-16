@@ -1550,29 +1550,29 @@ for (let i in data) {
             <div class="btn-group">
               <button
                 type="button"
-                class="btn btn-sm btn-outline-secondary"
+                class="btn btn-sm btn-outline-secondary viewAllEndpoints"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
-                onclick="populateModalOne('${data[i]?.twoLetterCode}')"
+                value="${data[i]?.twoLetterCode}"
               >
                 View All Endpoints
               </button>
             </div>
             <button
                 type="button"
-                class="btn btn-sm btn-outline-secondary"
+                class="btn btn-sm btn-outline-secondary embedSVG"
                 data-bs-toggle="modal"
                 data-bs-target="#modalTwo"
-                onclick = "populateModalTwo('${data[i]?.twoLetterCode}', 'svg')"
+                value="${data[i]?.twoLetterCode}"
               >
                 Embed SVG
               </button>
               <button
                 type="button"
-                class="btn btn-sm btn-outline-secondary"
+                class="btn btn-sm btn-outline-secondary embedPNG"
                 data-bs-toggle="modal"
                 data-bs-target="#modalTwo"
-                onclick="populateModalTwo('${data[i]?.twoLetterCode}', 'png')"
+                value="${data[i]?.twoLetterCode}"
               >
                 Embed PNG
               </button>
@@ -1688,12 +1688,33 @@ function copyImgTag() {
     .catch(() => alert("Unable to copy to clipboard"));
 }
 
+document.getElementById("copyButton").addEventListener("click", copyImgTag);
+
 function changeTextAreaChars() {
   let str = document.getElementById("comment").value;
   document.getElementById("chars").innerText = str.length;
 }
 
-document.getElementById("copyButton").addEventListener("click", copyImgTag);
+function handleClick(event) {
+  event = event || window.event;
+  event.target = event.target || event.srcElement;
+  if (event.target?.className) {
+    let className = event.target.className;
+    if (className.includes("viewAllEndpoints")) {
+      populateModalOne(event.target.value);
+    } else if (className.includes("embedSVG")) {
+      populateModalTwo(event.target.value, "svg");
+    } else if (className.includes("embedPNG")) {
+      populateModalTwo(event.target.value, "png");
+    }
+  }
+}
+
+if (document.addEventListener) {
+  document.addEventListener("click", handleClick, false);
+} else if (document.attachEvent) {
+  document.attachEvent("onclick", handleClick);
+}
 
 document
   .getElementById("comment")
@@ -1708,7 +1729,3 @@ form.addEventListener("submit", function (e) {
     "Thank you for your feedback. We really appreciate you taking the time out of your day to do that."
   );
 });
-
-function populateHi() {
-  document.getElementById("hi").innerHTML = "<h1>HI</h1>"
-}
