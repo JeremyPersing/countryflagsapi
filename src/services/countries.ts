@@ -16,7 +16,6 @@ export const createAllCountriesFile = () => {
       arr.push(key);
       objOne[value] = arr;
     }
-    // console.log(`${key}: ${value}`);
   }
 
   // us: "001"
@@ -24,7 +23,6 @@ export const createAllCountriesFile = () => {
   // numbers
   for (const [key, value] of Object.entries(numbers)) {
     objTwo[value] = key;
-    // console.log(`${key}: ${value}`);
   }
 
   // "us": USA
@@ -32,7 +30,6 @@ export const createAllCountriesFile = () => {
   // 3code
   for (const [key, value] of Object.entries(threeLetterCodes)) {
     objThree[value] = key;
-    // console.log(`${key}: ${value}`);
   }
 
   let realObj: any = {};

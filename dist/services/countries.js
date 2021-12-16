@@ -22,21 +22,18 @@ const createAllCountriesFile = () => {
             arr.push(key);
             objOne[value] = arr;
         }
-        // console.log(`${key}: ${value}`);
     }
     // us: "001"
     let objTwo = {};
     // numbers
     for (const [key, value] of Object.entries(numericCodesToTwoLetterCountryCodes_1.default)) {
         objTwo[value] = key;
-        // console.log(`${key}: ${value}`);
     }
     // "us": USA
     let objThree = {};
     // 3code
     for (const [key, value] of Object.entries(threeLetterCountryCodesToTwoLetterCountryCodes_1.default)) {
         objThree[value] = key;
-        // console.log(`${key}: ${value}`);
     }
     let realObj = {};
     // This is the 2 code

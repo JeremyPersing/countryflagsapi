@@ -1586,7 +1586,6 @@ for (let i in data) {
 document.getElementById("flags").innerHTML = body;
 
 function populateModalOne(code) {
-  console.log("in populateModalOne");
   if (!code) return;
 
   let obj = data[code.toLowerCase()];
@@ -1655,7 +1654,6 @@ function populateModalOne(code) {
 }
 
 function populateModalTwo(code, type) {
-  console.log("in populate modal two and the code is", code);
   if (!code) return;
 
   let obj = data[code.toLowerCase()];
