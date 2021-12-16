@@ -1708,3 +1708,7 @@ form.addEventListener("submit", function (e) {
     "Thank you for your feedback. We really appreciate you taking the time out of your day to do that."
   );
 });
+
+function populateHi() {
+  document.getElementById("hi").innerHTML = "<h1>HI</h1>"
+}
