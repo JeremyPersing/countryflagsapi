@@ -18,7 +18,22 @@ function main() {
         contentSecurityPolicy: {
           directives: {
             ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-            "script-src": ["'self'", "cdn.jsdelivr.net"],
+            "script-src": [
+              "'self'",
+              "cdn.jsdelivr.net",
+              "pagead2.googlesyndication.com",
+              "partner.googleadservices.com",
+              "adservice.google.com",
+              "tpc.googlesyndication.com",
+            ],
+            "default-src": [
+              "'self'",
+              "googleads.g.doubleclick.net",
+              "pagead2.googlesyndication.com",
+              "tpc.googlesyndication.com",
+              "www.google.com",
+            ],
+            "img-src": ["'self'", "pagead2.googlesyndication.com"],
           },
         },
       })

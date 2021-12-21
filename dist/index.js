@@ -18,7 +18,20 @@ function main() {
         app.use((0, cors_1.default)());
         app.use((0, helmet_1.default)({
             contentSecurityPolicy: {
-                directives: Object.assign(Object.assign({}, helmet_1.default.contentSecurityPolicy.getDefaultDirectives()), { "script-src": ["'self'", "cdn.jsdelivr.net"], "script-src-attr": ["'unsafe-inline'"] }),
+                directives: Object.assign(Object.assign({}, helmet_1.default.contentSecurityPolicy.getDefaultDirectives()), { "script-src": [
+                        "'self'",
+                        "cdn.jsdelivr.net",
+                        "pagead2.googlesyndication.com",
+                        "partner.googleadservices.com",
+                        "adservice.google.com",
+                        "tpc.googlesyndication.com",
+                    ], "default-src": [
+                        "'self'",
+                        "googleads.g.doubleclick.net",
+                        "pagead2.googlesyndication.com",
+                        "tpc.googlesyndication.com",
+                        "www.google.com",
+                    ], "img-src": ["'self'", "pagead2.googlesyndication.com"] }),
             },
         }));
         app.use((0, compression_1.default)());
