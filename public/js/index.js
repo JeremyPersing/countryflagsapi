@@ -413,6 +413,12 @@ const data = {
     threeLetterCode: "ETH",
     twoLetterCode: "ET",
   },
+  eu: {
+    name: ["European Union", "The European Union", "Europe"],
+    number: "",
+    threeLetterCode: "EUR",
+    twoLetterCode: "EU",
+  },
   fi: {
     name: ["Finland"],
     number: "246",

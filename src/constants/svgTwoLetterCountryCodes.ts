@@ -70,6 +70,7 @@ const codes: {
   er: true,
   es: true,
   et: true,
+  eu: true,
   fi: true,
   fj: true,
   fk: true,
