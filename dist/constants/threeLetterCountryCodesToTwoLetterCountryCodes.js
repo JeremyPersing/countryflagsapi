@@ -72,6 +72,7 @@ const obj = {
     est: "ee",
     swz: "sz",
     eth: "et",
+    eur: "eu",
     flk: "fk",
     fro: "fo",
     fji: "fj",
